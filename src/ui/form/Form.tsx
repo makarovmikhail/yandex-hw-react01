@@ -5,17 +5,19 @@ import {UIButton} from "@ui/button";
 
 interface IUIFormProps {
   initialValues: any;
+  handlers: any;
   onSave: any;
   onCancel: any;
 }
 
-const UIForm: FC<IUIFormProps> = ({initialValues, onSave, onCancel}) => {
+const UIForm: FC<IUIFormProps> = ({initialValues, onSave, onCancel, handlers}) => {
   return (
     <FormContainer>
       <UIInput
         {...{
           label: "GitHub repository",
           initialValue: initialValues.repo,
+          handler: handlers.repo,
           placeholder: "user-name/repo-name",
           isRequired: true
         }}
@@ -24,6 +26,7 @@ const UIForm: FC<IUIFormProps> = ({initialValues, onSave, onCancel}) => {
         {...{
           label: "Build command",
           initialValue: initialValues.build,
+          handler: handlers.build,
           placeholder: "npm ci && npm run build",
           isRequired: true
         }}
@@ -32,6 +35,7 @@ const UIForm: FC<IUIFormProps> = ({initialValues, onSave, onCancel}) => {
         {...{
           label: "Main branch",
           initialValue: initialValues.branch,
+          handler: handlers.branch,
           placeholder: "master |",
           isRequired: false
         }}
@@ -40,6 +44,7 @@ const UIForm: FC<IUIFormProps> = ({initialValues, onSave, onCancel}) => {
         {...{
           prefixLabel: "Synchronize every",
           label: "minutes",
+          handler: handlers.time,
           initialValue: initialValues.time,
           placeholder: "10"
         }}

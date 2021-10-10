@@ -13,6 +13,7 @@ import {
 export interface IInputProps {
   label: string;
   initialValue: string;
+  handler?: any;
   placeholder: string;
   isRequired: boolean;
   // handleChange: ReturnType<(e: Event) => void>;
@@ -21,6 +22,7 @@ export interface IInputProps {
 const Input: FC<IInputProps> = ({
   label,
   initialValue,
+  handler,
   placeholder,
   isRequired
 }) => {
@@ -39,6 +41,7 @@ const Input: FC<IInputProps> = ({
           onChange={(e) => {
             e.preventDefault();
             setValue(e.target.value);
+            handler(e.target.value);
           }}
         />
         <ClearContainer>

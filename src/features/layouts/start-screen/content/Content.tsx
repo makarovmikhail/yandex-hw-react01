@@ -4,6 +4,8 @@ import {Button} from "../../../button";
 import {ContentMessage, UIContent} from "@ui/layouts/start-screen/Styles";
 import {ContentText} from "@ui/layouts/start-screen/Styles";
 
+import routes from "@routes";
+
 const Content = () => {
   const history = useHistory();
   return (
@@ -17,7 +19,7 @@ const Content = () => {
       <Button
         {...{theme: "primary", label: "Open settings"}}
         onClick={() => {
-          history.push("/history");
+          history.push(routes.settings);
         }}
       />
     </UIContent>
