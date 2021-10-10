@@ -7,7 +7,8 @@ import history from "@history";
 import {
   ActionButton,
   ActionButtonContent,
-  ActionButtonText
+  ActionButtonText,
+  ActionsContainer
 } from "@ui/header/Styles";
 
 const History = () => {
@@ -27,11 +28,13 @@ const History = () => {
       ))}
       {
         <div style={{width: "auto"}}>
-          <ActionButton>
-            <ActionButtonContent>
-              <ActionButtonText>{"Show more"}</ActionButtonText>
-            </ActionButtonContent>
-          </ActionButton>
+          <ActionsContainer>
+            <ActionButton>
+              <ActionButtonContent>
+                <ActionButtonText>{"Show more"}</ActionButtonText>
+              </ActionButtonContent>
+            </ActionButton>
+          </ActionsContainer>
         </div>
       }
     </UIHistory>

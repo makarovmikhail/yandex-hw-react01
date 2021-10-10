@@ -18,6 +18,10 @@ export const CardContainer = styled.div`
     box-shadow: 0px 0px 1px rgba(67, 68, 69, 0.3),
       0px 2px 8px rgba(67, 68, 69, 0.3);
   }
+
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 `;
 
 export const CardContent = styled.div`
@@ -30,6 +34,9 @@ export const CommitDetails = styled.div`
   display: flex;
   flex-direction: row;
   gap: 10px;
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 `;
 
 export const CommitDetailsWrapper = styled.div`

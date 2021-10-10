@@ -7,6 +7,12 @@ export const Layout = styled.div`
     "header" minmax(48px, 48px)
     "content" minmax(auto, auto)
     "footer" minmax(32px, 32px);
+  @media (max-width: 320px) {
+    grid:
+      "header" minmax(52px, 52px)
+      "content" minmax(auto, auto)
+      "footer" minmax(68px, 68px);
+  }
 `;
 
 export const ContentLayout = styled.div`
@@ -17,6 +23,9 @@ export const ContentLayout = styled.div`
   width: 100%;
   padding: 0 100px;
   box-sizing: border-box;
+  @media (max-width: 320px) {
+    padding: 0 16px;
+  }
 `;
 
 export const UIContent = styled(ContentLayout)`

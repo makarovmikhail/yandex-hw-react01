@@ -12,6 +12,9 @@ export const StatusContainer = styled.div`
   align-items: flex-start;
   // align-items: center;
   gap: 4px;
+  @media (max-width: 320px) {
+    flex-direction: column;
+  }
 `;
 
 export const StatusIdText = styled.span`

@@ -4,6 +4,9 @@ export const SettingsContent = styled.div`
   grid-area: content;
   padding: 0 100px;
   box-sizing: border-box;
+  @media (max-width: 320px) {
+    padding: 0 16px;
+  }
 `;
 export const SubHeaderContainer = styled.div`
   display: flex;

@@ -13,6 +13,7 @@ const Form = () => {
   };
 
   const settings = useSelector((state: RootState) => state.settings);
+
   const dispatch = useDispatch();
 
   const [repo, setRepo] = useState(initialValues.repo);
@@ -20,7 +21,8 @@ const Form = () => {
   const [branch, setBranch] = useState(initialValues.branch);
   const [time, setTime] = useState(initialValues.time);
 
-  console.log(repo, build, branch, time);
+  const [save, setSave] = useState(false);
+  const [cancel, setCancel] = useState(false);
 
   const formProps = {
     ...{initialValues},
@@ -30,14 +32,26 @@ const Form = () => {
       branch: setBranch,
       time: setTime
     },
+    disabled: {
+      save,
+      cancel
+    },
     onSave: (e: Event) => {
       e.preventDefault();
+
       if (repo && build) {
+        setSave(true);
+        setCancel(true);
         console.log("OK");
+        setTimeout(() => {
+          dispatch(updateSettings({isSet: true, repo, build, branch, time}));
+          console.log("FINISHED");
+          setSave(false);
+          setCancel(false);
+        }, 3000);
       } else {
         console.log("Validation failed");
       }
-      dispatch(updateSettings({isSet: true, repo, build, branch, time}));
     },
     onCancel: (e: Event) => {
       e.preventDefault();

@@ -6,6 +6,13 @@ export const UserContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 6px;
+  @media (max-width: 320px) {
+    flex-direction: row;
+    gap: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #F0F2F3;
+    box-sizing: border-box;
+  }
 `;
 
 export const UserText = styled.span`

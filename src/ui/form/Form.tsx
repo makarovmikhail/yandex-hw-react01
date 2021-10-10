@@ -8,9 +8,16 @@ interface IUIFormProps {
   handlers: any;
   onSave: any;
   onCancel: any;
+  disabled: any;
 }
 
-const UIForm: FC<IUIFormProps> = ({initialValues, onSave, onCancel, handlers}) => {
+const UIForm: FC<IUIFormProps> = ({
+  initialValues,
+  onSave,
+  onCancel,
+  handlers,
+  disabled
+}) => {
   return (
     <FormContainer>
       <UIInput
@@ -50,8 +57,14 @@ const UIForm: FC<IUIFormProps> = ({initialValues, onSave, onCancel, handlers}) =
         }}
       />
       <ButtonsContainer>
-        <UIButton {...{label: "Save", theme: "primary"}} onClick={onSave} />
-        <UIButton {...{label: "Cancel"}} onClick={onCancel} />
+        <UIButton
+          {...{label: "Save", theme: "primary", isDisabled: disabled.save}}
+          onClick={onSave}
+        />
+        <UIButton
+          {...{label: "Cancel", isDisabled: disabled.cancel}}
+          onClick={onCancel}
+        />
       </ButtonsContainer>
     </FormContainer>
   );

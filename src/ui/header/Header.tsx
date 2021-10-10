@@ -4,7 +4,8 @@ import {
   ActionButtonContent,
   ActionsContainer,
   HeaderContainer,
-  HeaderText
+  HeaderText,
+  ActionButtonTextContainer
 } from "./Styles";
 
 import {FC} from "react";
@@ -31,7 +32,9 @@ const UIHeader: FC<IUIHeaderProps> = ({header, theme, actions}) => {
           <ActionButton onClick={a.onClick} key={a.text}>
             <ActionButtonContent>
               {a.icon}
-              {a.text && <ActionButtonText>{a.text}</ActionButtonText>}
+              <ActionButtonTextContainer>
+                {a.text && <ActionButtonText>{a.text}</ActionButtonText>}
+              </ActionButtonTextContainer>
             </ActionButtonContent>
           </ActionButton>
         ))}

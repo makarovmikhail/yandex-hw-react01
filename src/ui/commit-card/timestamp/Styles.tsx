@@ -18,6 +18,13 @@ export const TimeStampContainer = styled.div`
   // gap: 8px;
   justify-content: space-between;
   height: 100%;
+  @media (max-width: 320px) {
+    flex-direction: row;
+    gap: 10px;
+    padding-left: 28px;
+    padding-top: 8px;
+    box-sizing: border-box;
+  }
 `;
 
 export const Text = styled.span`

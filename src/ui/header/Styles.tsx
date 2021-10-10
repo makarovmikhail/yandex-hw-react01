@@ -33,6 +33,10 @@ export const HeaderContainer = styled.div`
   padding: 10px 100px;
   width: 100%;
   background-color: transparent;
+  @media (max-width: 320px) {
+    padding: 12px 16px;
+    height: 52px;
+  }
 `;
 
 export const HeaderText = styled.span`
@@ -44,6 +48,9 @@ export const HeaderText = styled.span`
   letter-spacing: 0.25px;
   /* --blue-grey-500 */
   color: ${(props) => getHeaderTextTheme(props.theme).color};
+  @media (max-width: 320px) {
+    font-size: 18px;
+  }
 `;
 
 export const ActionsContainer = styled.div`
@@ -57,6 +64,9 @@ export const ActionButtonContent = styled.div`
   display: flex;
   flex-direction: row;
   padding: 0px 8px;
+  @media (max-width: 320px) {
+    padding: 8px;
+  }
 `;
 
 export const ActionButton = styled.button`
@@ -66,6 +76,9 @@ export const ActionButton = styled.button`
   padding: 0;
   border-radius: 4px;
   cursor: pointer;
+  @media (max-width: 320px) {
+    width: 100%;
+  }
 `;
 
 export const SettingsIconWrapper = styled(SettingsIcon)`
@@ -84,7 +97,12 @@ export const ActionButtonText = styled.div`
   line-height: 2.15;
   /* typo / --color-text */
   color: #000000;
-
-  padding: 0px 5px;
   margin: auto;
+  padding: 0px 5px;
+`;
+
+export const ActionButtonTextContainer = styled.div`
+  @media (max-width: 320px) {
+    display: none;
+  }
 `;
