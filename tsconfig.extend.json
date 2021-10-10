@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@routes": ["./utils/routes.json"],
+      "@history": ["./utils/history.json"],
+
+      "@data-access/*": ["./data-access/*"],
+      "@features/*": ["./features/*"],
+      "@ui/*": ["./ui/*"],
+      "@utils/*": ["./utils/*"],
+      "@icons/*": ["./icons/*"]
+    }
+  }
+}
