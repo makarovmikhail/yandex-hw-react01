@@ -4,6 +4,7 @@ import {updateSettings} from "@data-access/slice";
 import {useState} from "react";
 import {RootState} from "@data-access/store";
 import UIModalContent from "@features/layouts/modal/ModalError";
+import {Modal} from "@features/layouts/modal";
 
 const Form = () => {
   const [isModal, setIsModal] = useState(false);
@@ -70,12 +71,18 @@ const Form = () => {
     <>
       <UIForm {...formProps} />
       {isModal && (
-        <UIModalContent
+        <Modal
           onClose={() => {
-            setIsModal(false);
+            // setIsModal(false);
           }}
-          message={message}
-        />
+        >
+          <UIModalContent
+            onClose={() => {
+              setIsModal(false);
+            }}
+            message={message}
+          />
+        </Modal>
       )}
     </>
   );
