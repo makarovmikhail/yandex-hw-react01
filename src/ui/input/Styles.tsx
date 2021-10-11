@@ -83,7 +83,7 @@ export const InputContainer = styled.div`
 export const ClearContainer = styled.div`
   height: 100%;
   position: relative;
-  display: none;
+  left: -25px;
 `;
 
 export const Clear = styled(ClearIcon)`

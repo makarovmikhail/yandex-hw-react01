@@ -44,7 +44,11 @@ const Input: FC<IInputProps> = ({
           }}
         />
         <ClearContainer>
-          <Clear />
+          <Clear
+            onClick={() => {
+              setValue("");
+            }}
+          />
         </ClearContainer>
       </InputContainer>
     </InputFeature>
