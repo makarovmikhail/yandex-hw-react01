@@ -3,8 +3,12 @@ import {useSelector, useDispatch} from "react-redux";
 import {updateSettings} from "@data-access/slice";
 import {useState} from "react";
 import {RootState} from "@data-access/store";
+import UIModalContent from "@features/layouts/modal/ModalError";
 
 const Form = () => {
+  const [isModal, setIsModal] = useState(false);
+  const [message, setMessage] = useState("Error");
+
   const initialValues = {
     repo: "",
     build: "npm ci && npm run build",
@@ -45,19 +49,36 @@ const Form = () => {
         console.log("OK");
         setTimeout(() => {
           dispatch(updateSettings({isSet: true, repo, build, branch, time}));
-          console.log("FINISHED");
           setSave(false);
           setCancel(false);
+          const isSucced = Math.random() < 0.5;
+          if (isSucced) {
+            setMessage("Some error has happened");
+            setIsModal(true);
+          }
         }, 3000);
       } else {
-        console.log("Validation failed");
+        setMessage("Vlidation failed");
+        setIsModal(true);
       }
     },
     onCancel: (e: Event) => {
       e.preventDefault();
     }
   };
-  return <UIForm {...formProps} />;
+  return (
+    <>
+      <UIForm {...formProps} />
+      {isModal && (
+        <UIModalContent
+          onClose={() => {
+            setIsModal(false);
+          }}
+          message={message}
+        />
+      )}
+    </>
+  );
 };
 
 export default Form;
