@@ -8,12 +8,21 @@
   flex-direction: row;
   justify-content: space-between;
   box-sizing: border-box;
+  align-items: center;
 }
 
 @media (max-width: 320px) {
   .footer {
     flex-direction: column;
     padding: 16px;
+    height: auto;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer {
+    padding: 30px;
     height: auto;
   }
 }

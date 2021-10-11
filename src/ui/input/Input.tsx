@@ -16,7 +16,6 @@ export interface IInputProps {
   handler?: any;
   placeholder: string;
   isRequired: boolean;
-  // handleChange: ReturnType<(e: Event) => void>;
 }
 
 const Input: FC<IInputProps> = ({

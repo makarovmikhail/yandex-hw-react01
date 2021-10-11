@@ -15,7 +15,8 @@ const UIModalContent: FC<{onRunBuild: any}> = ({onRunBuild}) => {
               label: "Enter the commit hash which you want to build.",
               initialValue: "",
               placeholder: "Commit hash",
-              isRequired: false
+              isRequired: false,
+              handler: () => {}
             }}
           />
           <ActionsContainer>

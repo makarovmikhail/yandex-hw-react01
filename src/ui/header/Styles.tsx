@@ -35,7 +35,11 @@ export const HeaderContainer = styled.div`
   background-color: transparent;
   @media (max-width: 320px) {
     padding: 12px 16px;
-    height: 52px;
+    height: auto;
+  }
+  @media (max-width: 800px) {
+    padding: 12px 30px;
+    height: auto;
   }
 `;
 
@@ -49,6 +53,9 @@ export const HeaderText = styled.span`
   /* --blue-grey-500 */
   color: ${(props) => getHeaderTextTheme(props.theme).color};
   @media (max-width: 320px) {
+    font-size: 18px;
+  }
+  @media (max-width: 800px) {
     font-size: 18px;
   }
 `;
@@ -65,6 +72,9 @@ export const ActionButtonContent = styled.div`
   flex-direction: row;
   padding: 0px 8px;
   @media (max-width: 320px) {
+    padding: 8px;
+  }
+  @media (max-width: 800px) {
     padding: 8px;
   }
 `;
@@ -103,6 +113,9 @@ export const ActionButtonText = styled.div`
 
 export const ActionButtonTextContainer = styled.div`
   @media (max-width: 320px) {
+    display: none;
+  }
+  @media (max-width: 800px) {
     display: none;
   }
 `;

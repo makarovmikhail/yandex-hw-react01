@@ -33,4 +33,5 @@ export const StatusMessageText = styled.span`
   font-size: 15px;
   line-height: 1.33;
   color: #000000;
+  word-break: break-word;
 `;

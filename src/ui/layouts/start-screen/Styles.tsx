@@ -9,9 +9,15 @@ export const Layout = styled.div`
     "footer" minmax(32px, 32px);
   @media (max-width: 320px) {
     grid:
-      "header" minmax(52px, 52px)
+      "header" minmax(66px, 66px)
       "content" minmax(auto, auto)
       "footer" minmax(68px, 68px);
+  }
+  @media (max-width: 800px) {
+    grid:
+      "header" minmax(auto, auto)
+      "content" minmax(auto, auto)
+      "footer" minmax(auto, auto);
   }
 `;
 
@@ -25,6 +31,9 @@ export const ContentLayout = styled.div`
   box-sizing: border-box;
   @media (max-width: 320px) {
     padding: 0 16px;
+  }
+  @media (max-width: 800px) {
+    padding: 0 30px;
   }
 `;
 
